@@ -20,19 +20,19 @@ config.outbounds.map(i => {
     i.outbounds.push(...getTags(proxies))
   }
   if (['hk', 'hk-auto'].includes(i.tag)) {
-    i.outbounds.push(...getTags(proxies, /(?i)(香港|HK|Hong)/i))
+    i.outbounds.push(...getTags(proxies, /.*(香港|HK|Hong)/i))
   }
   if (['tw', 'tw-auto'].includes(i.tag)) {
-    i.outbounds.push(...getTags(proxies, /台|tw|taiwan|🇹🇼/i))
+    i.outbounds.push(...getTags(proxies, /.*(台|tw|taiwan|🇹🇼)/i))
   }
   if (['jp', 'jp-auto'].includes(i.tag)) {
-    i.outbounds.push(...getTags(proxies, /(?i)(日本|川日|东京|大阪|泉日|埼玉|沪日|深日|JP|Japan)/i))
+    i.outbounds.push(...getTags(proxies, /.*(日本|川日|东京|大阪|泉日|埼玉|沪日|深日|JP|Japan)/i))
   }
   if (['sg', 'sg-auto'].includes(i.tag)) {
-    i.outbounds.push(...getTags(proxies, /(?i)(新加坡|坡|狮城|SG|Singapore)/i))
+    i.outbounds.push(...getTags(proxies, /.*(新加坡|坡|狮城|SG|Singapore)/i))
   }
   if (['us', 'us-auto'].includes(i.tag)) {
-    i.outbounds.push(...getTags(proxies, /(?i)(🇺🇸|美|US|United States)/i))
+    i.outbounds.push(...getTags(proxies, /.*(🇺🇸|美|US|United States)/i))
   }
 })
 
