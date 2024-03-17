@@ -16,22 +16,22 @@ let proxies = await produceArtifact({
 config.outbounds.push(...proxies)
 
 config.outbounds.map(i => {
-  if (['all', 'all-auto'].includes(i.tag)) {
+  if (['all'].includes(i.tag)) {
     i.outbounds.push(...getTags(proxies))
   }
-  if (['hk', 'hk-auto'].includes(i.tag)) {
+  if (['hk'].includes(i.tag)) {
     i.outbounds.push(...getTags(proxies, /.*(香港|HK|Hong)/i))
   }
-  if (['tw', 'tw-auto'].includes(i.tag)) {
+  if (['tw'].includes(i.tag)) {
     i.outbounds.push(...getTags(proxies, /.*(台|tw|taiwan|🇹🇼)/i))
   }
-  if (['jp', 'jp-auto'].includes(i.tag)) {
+  if (['jp'].includes(i.tag)) {
     i.outbounds.push(...getTags(proxies, /.*(日本|川日|东京|大阪|泉日|埼玉|沪日|深日|JP|Japan)/i))
   }
-  if (['sg', 'sg-auto'].includes(i.tag)) {
+  if (['sg'].includes(i.tag)) {
     i.outbounds.push(...getTags(proxies, /.*(新加坡|坡|狮城|SG|Singapore)/i))
   }
-  if (['us', 'us-auto'].includes(i.tag)) {
+  if (['us'].includes(i.tag)) {
     i.outbounds.push(...getTags(proxies, /.*(🇺🇸|美|US|United States)/i))
   }
 })
